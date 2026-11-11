@@ -1,3 +1,4 @@
+export * from './agentisend.handler';
 export * from './anypost.handler';
 export * from './braze.handler';
 export * from './email-webhook.handler';

@@ -1,0 +1,49 @@
+---
+title: 'AgentiSend'
+description: "Configure the AgentiSend email provider in Novu to send transactional notifications with an API key, a verified sending domain, and activity tracking."
+---
+
+You can use the [AgentiSend](https://agentisend.com/) provider to send transactional emails to your customers using the Novu Platform with a single API to create multi-channel experiences.
+
+## Getting Started
+
+To use the AgentiSend provider in the email channel, you will need an AgentiSend account and an API key added to the AgentiSend integration on the Novu platform.
+
+## Generating an API Key
+
+- [Sign up](https://console.agentisend.com/) or log in to the AgentiSend console.
+- Open **API keys** and create a key.
+  - A `sending_access` key is enough to send email. Novu's connection check accepts either permission.
+- Copy the key (it starts with `as_`). It is shown once.
+
+## Authenticating your Sender Identity
+
+Before you can send emails, verify the domain you send from. Add it under **Domains** in the AgentiSend console and publish the DNS records it lists. The steps are in [Domains and DNS](https://agentisend.com/docs/guides/domains-and-dns).
+
+## Creating an AgentiSend integration with Novu
+
+- Visit the [Integrations](https://dashboard.novu.co/integrations?utm_campaign=docs-agentisend) page on Novu.
+- Click on Add a Provider.
+- Select AgentiSend.
+- Enter your AgentiSend API Key.
+- Fill in the `From email address` field using an address on your verified domain.
+- Fill in the `Sender's name`.
+- Click on the `Disabled` button and mark it as `Active`.
+- Click on the **Update** button.
+- You should now be able to send notifications using AgentiSend in Novu.
+
+Novu passes its message id as the `Idempotency-Key`, so a retried job does not send the email twice.
+
+## Next Steps
+
+<Columns cols={2}>
+  <Card title="Configure bcc, cc, and reply-to" href="/platform/integrations/email#sending-email-overrides">
+    Learn how to configure bcc, cc, and reply-to for your email notifications using email overrides
+  </Card>
+  <Card title="Sending email attachments" href="/platform/integrations/email#sending-email-attachments">
+    Learn how to send attachments with email notifications
+  </Card>
+  <Card title="Use different email integration" href="/platform/integrations/email#sending-email-overrides">
+    Learn how to use different email provider integrations to be used to send emails
+  </Card>
+</Columns>

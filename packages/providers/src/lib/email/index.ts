@@ -1,3 +1,4 @@
+export * from './agentisend/agentisend.provider';
 export * from './anypost/anypost.provider';
 export * from './braze/braze.provider';
 export * from './brevo/brevo.provider';

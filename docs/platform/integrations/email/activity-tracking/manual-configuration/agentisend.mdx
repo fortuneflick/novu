@@ -1,0 +1,34 @@
+---
+title: 'AgentiSend'
+description: "Configure AgentiSend webhooks for Novu activity tracking with a step-by-step guide covering event types, endpoint setup, and signature verification."
+---
+
+Send AgentiSend's email events to Novu so they appear in the Activity Feed.
+
+<Note>
+  Email Activity Tracking is available on **Novu Cloud** and **Enterprise self-hosted** only. It is not included in the **Community self-hosted** edition. Contact us at sales@novu.co to learn more about Enterprise self-hosted licensing.
+</Note>
+
+## Step 1: Get your webhook URL from Novu
+
+1. Navigate to the **Integration Store** page in Novu and select your **AgentiSend** integration.
+2. Enable the **Email Activity Tracking** toggle.
+3. A unique Inbound Webhook URL will be displayed. Click the **copy** icon to copy it.
+
+## Step 2: Create the webhook in AgentiSend
+
+1. In the AgentiSend console, open **Webhooks** (or call `POST /webhooks`).
+2. Create an endpoint with:
+    - **URL:** the **Inbound Webhook URL** you copied from Novu.
+    - **Events:** `email.sent`, `email.delivered`, `email.delivery_delayed`, `email.bounced`, `email.complained`, `email.suppressed`, `email.failed`, `email.opened` and `email.clicked`.
+    - **Payload format:** leave it as `native`.
+3. Save the endpoint.
+
+## Step 3: Add the signing secret (Recommended)
+
+1. Copy the endpoint's **signing secret**. It is shown once, when the endpoint is created.
+2. Return to your AgentiSend integration settings in Novu.
+3. Under the **Email Activity Tracking** section, paste the secret into the **Inbound Webhook Signing Key** field.
+4. Click **Save Changes**.
+
+Novu then checks the `x-agentisend-signature` header on every delivery and refuses one older than five minutes.

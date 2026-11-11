@@ -1,6 +1,7 @@
 import { ChannelTypeEnum, EmailProviderIdEnum } from '../../../types';
 import { UTM_CAMPAIGN_QUERY_PARAM } from '../../../ui';
 import {
+  agentisendGroupConfigurations,
   anypostGroupConfigurations,
   mailgunGroupConfigurations,
   resendGroupConfigurations,
@@ -8,6 +9,7 @@ import {
   sesGroupConfigurations,
 } from '../configurations/provider-configuration';
 import {
+  agentisendConfig,
   anypostConfig,
   brazeEmailConfig,
   emailWebhookConfig,
@@ -171,6 +173,15 @@ export const emailProviders: IProviderConfig[] = [
     configurations: anypostGroupConfigurations,
     docReference: `https://docs.novu.co/platform/integrations/email/anypost${UTM_CAMPAIGN_QUERY_PARAM}`,
     logoFileName: { light: 'anypost.svg', dark: 'anypost.svg' },
+  },
+  {
+    id: EmailProviderIdEnum.AgentiSend,
+    displayName: 'AgentiSend',
+    channel: ChannelTypeEnum.EMAIL,
+    credentials: agentisendConfig,
+    configurations: agentisendGroupConfigurations,
+    docReference: `https://docs.novu.co/platform/integrations/email/agentisend${UTM_CAMPAIGN_QUERY_PARAM}`,
+    logoFileName: { light: 'agentisend.svg', dark: 'agentisend.svg' },
   },
   {
     id: EmailProviderIdEnum.Plunk,

@@ -237,6 +237,7 @@
                   "platform/integrations/email/mailtrap",
                   "platform/integrations/email/netcore",
                   "platform/integrations/email/plunk",
+                  "platform/integrations/email/agentisend",
                   "platform/integrations/email/anypost",
                   "platform/integrations/email/webhook",
                   "platform/integrations/email/custom-smtp",
@@ -251,6 +252,7 @@
                           "platform/integrations/email/activity-tracking/manual-configuration/mailgun",
                           "platform/integrations/email/activity-tracking/manual-configuration/resend",
                           "platform/integrations/email/activity-tracking/manual-configuration/sendgrid",
+                          "platform/integrations/email/activity-tracking/manual-configuration/agentisend",
                           "platform/integrations/email/activity-tracking/manual-configuration/anypost"
                         ]
                       }
